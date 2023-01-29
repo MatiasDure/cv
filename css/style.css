@@ -1,54 +1,100 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
+
 body{
     background: rgb(2,0,36);
     background: linear-gradient(rgb(0, 214, 197), rgba(0,0,0,1));
     background-attachment: fixed;
     color:white;
+    font-family: 'Alata', sans-serif;
 }
-header{
-    height: 100px;
+
+.nav_header
+{
+    height: 60px;
     background-color:rgba(0,0,0,0.25);
-    border: 3px solid rgba(255,255,255,0.4);
+    border: 3px solid rgba(255,255,255,0.5);
     position: relative;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding-top: 30px;
+    padding-left: 180px;
 }
+
 nav{
     display: inline-block;
-    position: absolute;
-    right:15%;
-    top:40%;
-    border:1px solid black;
+    /* border:1px solid black; */
 }
-div
+
+.nav_header > h4
 {
-    display: inline-block;
-    border:1px solid black;
+    /* border:1px solid black; */
+    float: left;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    font-weight: normal;
 }
-h1
-{
-    display: inline-block;
-    border:1px solid black;
-}
+
 li{
     list-style: none;
     display: inline-block;
 }
+
 .social-icons
 {
-    border:1px solid black;
-    margin-left:15px;
-    margin-top:10px;
+    float: left;
+    width: 18%;   
+    margin-right: 300px;
+    /* border:1px solid black; */
 }
+
 .icons
 {
-    width: 40px;
-    padding:0 5px;
+    width: 32px;
+    padding:0 10px;
+    transition: 0.3s;
 }
 .menu
 {
-    padding-left: 40px;
+    padding: 0px 20px 10px 20px;
     font-size: 18px;
+}
+
+main > section
+{
+    border:1px solid red;
+    padding: 9% 20%;
+}
+
+/*with first-child, it means the tag which is calling it (section in this case). 
+    Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
+    section, but checks if the first child is section, if its not, then it does nothing */
+main > section:first-child > h1
+{
+    font-size: 7vw;
+}
+
+main > section:first-child
+{
+    font-size: 2vw;
+    line-height: 1.5;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover
+{
+    color:#72efe9;
+}
+
+img.icons:hover
+{
+    border-radius: 50%;
 }
