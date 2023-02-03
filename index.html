@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Matias Dure</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="images/favicon.ico">
+        <link rel="icon" href="images/icons/favicon.ico">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
         </style>
@@ -14,9 +14,9 @@
             <h4>Matias Dure</h4>
             <div class="social-icons">
                 <ul>
-                    <li><a href="webBuildVA/cardVA.html" target="_blank"><img class="icons" src="images/linkedin.png"></a></li>
-                    <li><a href="webBuildVB/cardVB.html" target="_blank"><img class="icons" src="images/github.png"></a></li>
-                    <li><a href="#"><img class="icons" src="images/itch-io.png"></a></li>
+                    <li><a href="webBuildVA/cardVA.html" target="_blank"><img class="icons" src="images/icons/linkedin.png"></a></li>
+                    <li><a href="webBuildVB/cardVB.html" target="_blank"><img class="icons" src="images/icons/github.png"></a></li>
+                    <li><a href="#"><img class="icons" src="images/icons/itch-io.png"></a></li>
                 </ul>
             </div>
             <nav class="nav_level1">
@@ -25,38 +25,65 @@
                     <li class="menu"><a href="#about_me">About</a></li>
                     <li class="menu"><a href="#projects">Projects</a></li>
                     <li class="menu"><a href="#skills">Skills</a></li>
-                    <li class="menu">Contact</li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id = "introduction">
                 <p>Hey, my name is</p>
-                <h1>Matias Dure</h1>
+                <div class = "header_name_container">
+                    <h1>Matias Dure</h1>
+                </div>
                 <p>I am a CMGT engineer student at <a href="https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies" target="_blank">Saxion <br> University of Applied Science</a></p>
             </section>
             <section id = "about_me">
-                <header><h1>About me</h1></header>
-                <p>My name is Matias Dure and I enjoy learning and creating things using code. I am currently studying Creative Media & Game Technologies at Saxion University which is located in Enschede, The Netherlands.</p>
-                <br>
-                <p>For me, the best part of coding is solving problems and the feeling one gets after FINALLY fixing a bug. </p>
-                <br>
-                <p>As a developer, I see every product as a building, where every line of code acts as a brick that holds things together. Admiring the finalized "building" is what keeps me motivated to create even more.</p>
+                <div class="image_container">
+                    <img src="images/me.jpg" alt="profile picture">
+                </div>
+                <div class="text_container">
+                    <header><h1 class="header_title">About me</h1></header>
+                    <p>My name is Matias Dure and I enjoy learning and creating things using code. I am currently studying Creative Media & Game Technologies at Saxion University which is located in Enschede, The Netherlands.</p>
+                    <br>
+                    <p>For me, the best part of coding is solving problems and the feeling one gets after FINALLY fixing a bug. </p>
+                    <br>
+                    <p>As a developer, I see every product as a building, where every line of code acts as a brick that holds things together. Admiring the finalized "building" is what keeps me motivated to create even more.</p>
+                </div>
             </section>
             <section id = "projects">
-                <header><h1>Projects</h1></header>
-                <p></p>
+                <header><h1 class="header_title">Projects</h1></header>
+                <div class="carousel">
+                    <div class="carousel_item carousel_item_visible">                   
+                        <a href="https://matias-dure.itch.io/ghost-perspective" target="_blank"> <img src="images/projects/ghostPerspective.png" alt="ghost-game" class="projects"> </a>
+                    </div>
+                    <div class="carousel_item">                    
+                        <a href="https://matias-dure.itch.io/solar-abduction" target="_blank"><img src="images/projects/solar.png" alt="puzzle-game" class="projects"></a>
+                    </div>
+                    <div class="carousel_item">
+                        <a href="https://matias-dure.itch.io/void-invaders" target="_blank"><img src="images/projects/voidInvaders.png" alt="invaders-game" class="projects"></a>
+                    </div>
+                    <div class="carousel_item">
+                        <a href="https://matias-dure.itch.io/kuroko-basket-visual-novel" target="_blank"><img src="images/projects/kuroko.png" alt="kuroko-basket-game" class="projects"></a>
+                    </div>
+                    <div class="carousel_item">
+                        <a href="https://matias-dure.itch.io/basic-physics-simulator" target="_blank"><img src="images/projects/incredibleMach.png" alt="the-incredible-machines-game" class="projects"></a>
+                    </div>
+                    <div class="carousel_item">
+                        <a href="https://matias-dure.itch.io/mythical-dash" target="_blank"><img src="images/projects/mythical.png" alt="arcade-game" class="projects"></a>
+                    </div>
+                    <div class="carousel_buttons">
+                        <button id="carousel_button_prev" aria-label="previousSlide"><</button>
+                        <button id="carousel_button_next" aria-label="nextSlide">></button>
+                    </div>
+                </div>
             </section>
             <section id = "skills">
-                <header><h1>Skills</h1></h1></header>
+                <header><h1 class="header_title">Skills</h1></h1></header>
                 <img src="/images/skills.png" alt="skill set">
-            </section>
-            <section>
-                <header>Email Me!</header>
-                <p></p>
             </section>
         </main>
         <footer>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="index.js" charset="utf-8"></script>
     </body>
 </html>

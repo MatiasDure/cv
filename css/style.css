@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth !important;
+}
+
 body{
     background: rgb(2,0,36);
     background: linear-gradient(rgb(0, 214, 197), rgba(0,0,0,1));
@@ -13,6 +17,7 @@ body{
 
 .nav_header
 {
+    z-index: 1;
     height: 60px;
     background-color:rgba(0,0,0,0.25);
     border: 3px solid rgba(255,255,255,0.5);
@@ -26,12 +31,10 @@ body{
 
 nav{
     display: inline-block;
-    /* border:1px solid black; */
 }
 
 .nav_header > h4
 {
-    /* border:1px solid black; */
     float: left;
     margin-right: 20px;
     font-size: 1.5rem;
@@ -48,7 +51,6 @@ li{
     float: left;
     width: 18%;   
     margin-right: 300px;
-    /* border:1px solid black; */
 }
 
 .icons
@@ -62,31 +64,154 @@ li{
     padding: 0px 20px 10px 20px;
     font-size: 18px;
 }
+.header_title
+{
+    display: inline-block;
+    margin-bottom: 60px;
+    font-size: 3vw;
+}
+
 
 main > section
 {
-    border:1px solid red;
     padding: 9% 20%;
 }
 
 /*with first-child, it means the tag which is calling it (section in this case). 
-    Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
-    section, but checks if the first child is section, if its not, then it does nothing */
-main > section:first-child > h1
+Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
+section, but checks if the first child is section, if its not, then it does nothing */
+
+.header_name_container
 {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+main > section:first-child > div > h1
+{
+    display: inline-block;
     font-size: 7vw;
+    transition: all .5s;
 }
 
 main > section:first-child
 {
+    height: 400px;
     font-size: 2vw;
     line-height: 1.5;
+    position: relative;
 }
+
+section#about_me p
+{
+    font-size: 1.5vw;
+}
+
+section#about_me .image_container
+{
+    float: left;
+    margin: 0 50px 30px 0;
+    max-width: 300px;
+}
+
+section#about_me .image_container img
+{
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}
+
+section#about_me .text_container
+{
+    max-width: 500px;
+    display: inline-block;
+}
+
+section#skills img
+{
+    width:100%;
+    transition: all 1s;
+    margin: auto;
+}
+
+section#skills
+{
+    height:500px;
+}
+
 
 a
 {
     text-decoration: none;
     color:white;
+}
+
+/*--------------------carousel---------------------*/
+.projects
+{
+ width: 100%;
+ height: 32rem;
+ border-radius: 20px;
+}
+
+.carousel
+{
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+.carousel_item
+{
+    display: none;
+    transition: all 1s;
+}
+
+.carousel_item_visible
+{
+    display: block;
+    animation: fadeVisible 1.3s; 
+}
+
+.carousel .carousel_buttons
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel_buttons button
+{
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    font-size: 100%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color:black;
+    opacity:0.6;
+    background-color: white;
+}
+
+#carousel_button_prev
+{
+    margin-left:15px;
+}
+
+#carousel_button_next
+{
+    margin-right:15px;
+}
+
+#introduction h1:hover{
+    font-size: 7.5vw;
 }
 
 a:hover
@@ -97,4 +222,22 @@ a:hover
 img.icons:hover
 {
     border-radius: 50%;
+}
+
+.carousel .carousel_buttons button:hover
+{
+    background-color: #72efe9;
+    color: white;
+}
+
+section#skills img:hover
+{
+    border-radius: 20px;
+    width:80%;
+}
+
+@keyframes fadeVisible
+{
+    from { opacity: 0;}
+    to { opacity: 1;} 
 }
