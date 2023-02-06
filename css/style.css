@@ -131,7 +131,7 @@ section#skills img
 {
     width:100%;
     transition: all 1s;
-    margin: auto;
+    margin: 0 auto;
 }
 
 section#skills
