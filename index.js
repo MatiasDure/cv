@@ -10,7 +10,6 @@ let entered = false;
 let visibleItem = carouselItems[currentIndex];
 
 carouselParent.addEventListener("mouseenter", function(){
-    this.style.backgroundColor = "black";
     this.style.background = "rgba(0, 0, 0, 0.4)";
     applyStyleCarouselItems();
 })
@@ -61,4 +60,25 @@ function resetStyleCarouselParent()
 {
     carouselParent.style.backgroundColor = "black";
     carouselParent.style.background = "rgba(0, 0, 0, 0)";
+}
+
+//--------------------------mouseover container-------------------------
+//using jQuery
+let mouseOverContainer = $(".mouseover-scale-container");
+let mouseOverChildren = $(".mouseover-scale-child");
+
+mouseOverContainer.mouseenter(function(){
+    updateStyleScale();
+    this.style.background = "rgba(0, 0, 0, 0.4)";
+});
+
+mouseOverContainer.mouseleave(function(){
+    updateStyleScale(false);
+    this.style.background = "rgba(0, 0, 0, 0)";
+});
+
+function updateStyleScale(applyStyle = true)
+{
+    if(applyStyle) mouseOverChildren.addClass("mouseover-scale");
+    else mouseOverChildren.removeClass("mouseover-scale");
 }
