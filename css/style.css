@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html{
@@ -8,67 +11,55 @@ html{
 }
 
 body{
-    background: rgb(2,0,36);
     background: linear-gradient(rgb(0, 214, 197), rgba(0,0,0,1));
     background-attachment: fixed;
     color:white;
     font-family: 'Alata', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.nav_header
-{
-    z-index: 1;
-    height: 60px;
-    background-color:rgba(0,0,0,0.25);
-    border: 3px solid rgba(255,255,255,0.5);
-    position: relative;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    padding-top: 30px;
-    padding-left: 180px;
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
 }
 
-nav{
-    display: inline-block;
-}
-
-.nav_header > h4
-{
-    float: left;
-    margin-right: 20px;
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     font-size: 1.5rem;
-    font-weight: normal;
 }
 
-li{
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .logo li {
+    width: 32px;
+    height: 32px;
+}
+
+header li {
     list-style: none;
-    display: inline-block;
-}
-
-.social-icons
-{
-    float: left;
-    width: 18%;   
-    margin-right: 300px;
+    font-size: 1.5rem;
 }
 
 .icons
 {
-    width: 32px;
-    padding:0 10px;
+    width: 100%;
+    height: 100%;
     transition: 0.3s;
 }
-.menu
-{
-    padding: 0px 20px 10px 20px;
-    font-size: 18px;
-}
-.header_title
-{
-    display: inline-block;
-    margin-bottom: 60px;
-    font-size: 3vw;
+
+main {
+    flex: 1;
 }
 
 
@@ -77,15 +68,16 @@ main > section
     padding: 9% 20%;
 }
 
-/*with first-child, it means the tag which is calling it (section in this case). 
-Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
-section, but checks if the first child is section, if its not, then it does nothing */
 
 .header_name_container
 {
     height: 150px;
     margin-bottom: 20px;
 }
+
+/*with first-child, it means the tag which is calling it (section in this case). 
+Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
+section, but checks if the first child is section, if its not, then it does nothing */
 
 main > section:first-child > div > h1
 {

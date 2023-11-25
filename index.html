@@ -2,56 +2,72 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Matias Dure</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.css">
+        <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/brands.css">
+        <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/solid.css">
+        <link rel="stylesheet" href="css/test.css">
         <link rel="icon" href="images/icons/favicon.ico">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-        </style>
     </head>
     <body>
         <header class="nav_header">
-            <h4>Matias Dure</h4>
-            <div class="social-icons">
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/matias-dure-207baa227/" target="_blank"><img class="icons" src="images/icons/linkedin.png"></a></li>
-                    <li><a href="https://github.com/MatiasDure" target="_blank"><img class="icons" src="images/icons/github.png"></a></li>
-                    <li><a href="https://matias-dure.itch.io/" target="_black"><img class="icons" src="images/icons/itch-io.png"></a></li>
-                </ul>
-            </div>
-            <nav class="nav_level1">
-                <ul>
-                    <li class="menu"><a href="#introduction">Home</a></li>
-                    <li class="menu"><a href="#about_me">About</a></li>
-                    <li class="menu"><a href="#projects">Projects</a></li>
-                    <li class="menu"><a href="#skills">Skills</a></li>
-                    <li class="menu"><a href="files/cv.pdf" target="_blank">CV</a></li>
+            <nav class="social-media-links">
+                <ul class="social-icons">
+                    <li><a href="https://www.linkedin.com/in/matias-dure-207baa227/" target="_blank">
+                        <!-- <img class="icons" src="images/icons/linkedin.png"> -->
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                    </a></li>
+                    <li><a href="https://github.com/MatiasDure" target="_blank">
+                        <!-- <img class="icons" src="images/icons/github.png"> -->
+                        <!-- <i class="fa-brands fa-github"></i> -->
+                        <i class="fa-brands fa-square-github fa-xl"></i>
+                    </a></li>
+                    <li><a href="https://matias-dure.itch.io/" target="_black">
+                        <!-- <img class="icons" src="images/icons/itch-io.png"> -->
+                        <i class="fa-brands fa-itch-io fa-xl"></i>
+                    </a></li>
                 </ul>
             </nav>
+            <div>
+                <div class="logo">
+                    <h2>Matias Dure</h2>
+                </div>
+                <i class="fa-solid fa-bars fa-2x hidden"></i>
+                <nav class="website-links">
+                    <ul>
+                        <li class="menu"><a href="#introduction">Home</a></li>
+                        <li class="menu"><a href="#about_me">About</a></li>
+                        <li class="menu"><a href="#projects">Projects</a></li>
+                        <li class="menu"><a href="#skills">Skills</a></li>
+                        <li class="menu"><a href="files/cv.pdf" target="_blank">CV</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main>
-            <section id = "introduction">
-                <p>Hey, my name is</p>
+            <section id="introduction" class="introduction">
+                <p>Hey, I am</p>
                 <div class = "header_name_container">
                     <h1>Matias Dure</h1>
                 </div>
-                <p>I am a CMGT engineer student at <a href="https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies" target="_blank">Saxion <br> University of Applied Science</a></p>
+                <p>a CMGT engineer student at <a href="https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies" target="_blank">Saxion University of Applied Science</a></p>
             </section>
             <section id = "about_me">
-                <div class="image_container">
-                    <img src="images/me.jpg" alt="profile picture">
-                </div>
                 <div class="text_container">
-                    <header><h1 class="header_title">About me</h1></header>
-                    <p>My name is Matias Dure and I enjoy learning and creating things using code. I am currently studying Creative Media & Game Technologies at Saxion University which is located in Enschede, The Netherlands.</p>
+                    <h1 class="header_title">About me</h1>
+                    <p>I enjoy learning about technology and creating valuable applications using code.</p>
                     <br>
-                    <p>For me, the best part of coding is solving problems and the feeling one gets after FINALLY fixing a bug. </p>
+                    <p>For me, the best part of coding is solving problems and the feeling after FINALLY fixing that one bug.</p>
                     <br>
-                    <p>As a developer, I see every product as a building, where every line of code acts as a brick that holds things together. Admiring the finalized "building" is what keeps me motivated to create even more.</p>
+                    <p>As a developer, I see every product as a building, where every line of code acts as a brick that holds the structure together. Admiring the finalized product is what keeps me motivated to create even more.</p>
+                </div>
+                <div class="image_container">
+                    <img src="images/profile_pic.JPG" alt="profile picture">
                 </div>
             </section>
             <section id = "projects">
-                <header><h1 class="header_title">Projects</h1></header>
+                <h1 class="header_title">Projects</h1>
                 <div class="carousel">
                     <div class="carousel_item carousel_item_visible">                   
                         <a href="https://matias-dure.itch.io/safetysim-training" target="_blank"> <img src="images/projects/fireSim.png" alt="vr-fire-training-simulation" class="projects"> </a>
@@ -84,13 +100,13 @@
                         <a href="webBuildVB/cardVB.html" target="_blank"><img src="images/projects/uiUxVb.png" alt="card-game" class="projects"></a>
                     </div>
                     <div class="carousel_buttons">
-                        <button id="carousel_button_prev" aria-label="previousSlide"><</button>
-                        <button id="carousel_button_next" aria-label="nextSlide">></button>
+                        <button id="carousel_button_prev" aria-label="previousSlide"><i class="fa-solid fa-angle-left fa-2x"></i></button>
+                        <button id="carousel_button_next" aria-label="nextSlide"><i class="fa-solid fa-angle-right fa-2x"></i></button>
                     </div>
                 </div>
             </section>
             <section id = "skills">
-                <header><h1 class="header_title">Skills</h1></header>
+                <h1 class="header_title">Skills</h1>
                 <div class="mouseover-scale-container">
                     <img class="mouseover-scale-child"src="images/skills.png" alt="skill set">
                 </div>
