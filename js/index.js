@@ -1,3 +1,8 @@
+import "../css/style.css";
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import "@fortawesome/fontawesome-free/css/brands.css";
+import "@fortawesome/fontawesome-free/css/solid.css";
+
 //auto top scroller
 const header = document.querySelector("header");
 

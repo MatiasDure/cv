@@ -1,260 +1,263 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-*{
-    margin: 0;
+*, *::before, *::after {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --turquoise-color: rgb(0, 214, 197);
+    --dark-bg-mid-transparent: rgba(0,0,0,0.4);
 }
 
 html{
     scroll-behavior: smooth !important;
 }
 
-body{
-    background: linear-gradient(rgb(0, 214, 197), rgba(0,0,0,1));
+body {
+    background: linear-gradient(var(--turquoise-color), black);
     background-attachment: fixed;
-    color:white;
     font-family: 'Alata', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(0,0,0,0.3);
-    padding: 20px;
-}
-
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 1.5rem;
-}
-
-header ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-header .logo li {
-    width: 32px;
-    height: 32px;
-}
-
-header li {
-    list-style: none;
-    font-size: 1.5rem;
-}
-
-.icons
-{
-    width: 100%;
-    height: 100%;
-    transition: 0.3s;
-}
-
-main {
-    flex: 1;
-}
-
-
-main > section
-{
-    padding: 9% 20%;
-}
-
-
-.header_name_container
-{
-    height: 150px;
-    margin-bottom: 20px;
-}
-
-/*with first-child, it means the tag which is calling it (section in this case). 
-Also, it only works if there is a section which is the first child of the main tag, meaning, it doesnt look for the first instance of 
-section, but checks if the first child is section, if its not, then it does nothing */
-
-main > section:first-child > div > h1
-{
-    display: inline-block;
-    font-size: 7vw;
-    transition: all .5s;
-}
-
-main > section:first-child
-{
-    height: 400px;
-    font-size: 2vw;
-    line-height: 1.5;
-    position: relative;
-}
-
-section#about_me p
-{
-    font-size: 1.5vw;
-}
-
-section#about_me .image_container
-{
-    float: left;
-    margin: 0 50px 30px 0;
-    max-width: 300px;
-}
-
-section#about_me .image_container img
-{
-    width: 100%;
-    border-radius: 100%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
-}
-
-section#about_me .text_container
-{
-    max-width: 500px;
-    display: inline-block;
-}
-
-.mouseover-scale-child
-{
-    width:100%;
-    transition: all 1s;
-    display: block;
-    margin: auto;
-}
-
-section#skills
-{
-    height:500px;
-}
-
-.mouseover-scale-container
-{
-    width:55vw;
-    height:43vh;
-    /* display: flex;
-    justify-content: center; */
-    border-radius: 20px;
-    transition: all 1s;
-}
-
-.mouseover-scale
-{
-    width: 80%;
-    border-radius: 20px;
-}
-
-a
-{
-    text-decoration: none;
-    color:white;
-}
-
-/*--------------------carousel---------------------*/
-.projects
-{
- width: 100%;
- height: 32rem;
- border-radius: 20px;
-}
-
-.carousel
-{
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 20px;
-    transition: all 1s;
-}
-
-.carousel_item
-{
-    display: none;
-    transition: all 1s;
-}
-
-.carousel_item_visible
-{
-    display: block;
-    animation: fadeVisible 1.3s; 
-}
-
-.carousel .carousel_buttons
-{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    position:absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel .carousel_buttons button
-{
-    border-radius: 50px;
-    border: 0;
-    font-weight: bold;
-    font-size: 100%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    color:black;
-    opacity:0.6;
-    background-color: white;
-}
-
-#carousel_button_prev
-{
-    margin-left:15px;
-}
-
-#carousel_button_next
-{
-    margin-right:15px;
-}
-
-footer
-{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items:center;
-    width: 100%;
-    height: 100px;
-}
-
-footer h6{
-    display: inline;
-}
-
-#introduction h1:hover{
-    font-size: 7.5vw;
-}
-
-a:hover
-{
-    color:#72efe9;
-}
-
-img.icons:hover
-{
-    border-radius: 50%;
-}
-
-.carousel .carousel_buttons button:hover
-{
-    background-color: #72efe9;
     color: white;
 }
 
+header {
+    background-color: var(--dark-bg-mid-transparent);
+    position: relative;
+    padding: 20px 30px;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social_icons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo h2 {
+    margin-bottom: 10px;
+}
+
+.logo {
+    gap: 10px;
+    justify-content: center;
+}
+
+.social_icons li {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.social_icons a {
+    display: block;
+    width: 100%; 
+    height: 100%;
+}
+
+.icons {
+    width: 100%;
+}
+
+.website_links {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    background-color: var(--dark-bg-mid-transparent);
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.website_links li {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--turquoise-color);
+}
+
+/* Main */
+
+main {
+    padding: 20px 10vw;
+    flex: 1;
+}
+
+main > section:first-of-type {
+    margin-top: 130px;
+}
+
+main > section {
+    margin-bottom: 250px;
+}
+
+main h1 {
+    font-size: 2rem;
+}
+
+main p {
+    font-size: 1.2rem;
+}
+
+.header_title {
+    margin-bottom: 10px;
+}
+
+/* Introduction */
+.introduction h1 {
+    margin-top: 10px;
+    font-size: 5rem;
+    transition: .2s;
+    display: inline;
+}
+
+.introduction > p {
+    font-size: 1.8rem;
+}
+
+.introduction h1:hover {
+    font-size: 5.5rem;
+}
+
+.header_name_container {
+    min-height: 170px;
+}
+
+/* About me */
+.image_container {
+    margin-top: 20px;
+}
+
+.image_container img {
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px var(--dark-bg-mid-transparent);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* carousel */
+
+.carousel {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.carousel_buttons {
+    background-color: var(--dark-bg-mid-transparent);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel_buttons button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel_buttons button:not(.disabled):hover {
+    color: var(--turquoise-color);
+}
+
+.carousel_item {
+    display: none;
+    transition: all 1s;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel_item_visible {
+    display: block;
+    animation: fadeVisible .5s; 
+}
+
+.mouseover_scale_container, .carousel {
+    max-width: 700px;
+    height: 60vw; 
+    max-height: 565px;
+} 
+
+.disabled {
+    color: transparent !important;
+    cursor: default !important;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media queries */
+@media only screen and (min-width: 700px) {
+
+    :root {
+        font-size: 20px;
+    }
+
+    header {
+        padding: 20px 50px;
+    }
+
+    .website_links {
+        display: block;
+        position: static;
+        width: fit-content;
+        padding: 0;
+        background: transparent;
+        transform: translateY(0);
+    }
+
+    .website_links ul {
+        display: flex;
+        gap: 25px;
+    }
+
+    .hamburger_icon {
+        display: none !important;
+    }
+
+    main {
+        padding: 20px 20vw;
+    }
+}
+
+/* Keyframes */
 @keyframes fadeVisible
 {
     from { opacity: 0;}
     to { opacity: 1;} 
 }
-
