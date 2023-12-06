@@ -30,7 +30,7 @@ body {
 .go_top {
     position:fixed;
     padding: 5px;
-    bottom: 20px;
+    bottom: 40px;
     right: 20px;
     background-color: rgba(255,255,255,0.6);
     border-radius: 50%;
@@ -146,7 +146,7 @@ aside li button {
     width: 200px;
     height: 30px;
     background-color: rgba(255,255,255,0.4);
-    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 3px 5px var(--dark-bg-mid-transparent);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -164,7 +164,7 @@ aside li button {
     width: 100%;
     height: 100%;
     top: 0px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: var(--dark-bg-mid-transparent);
 }
 
 .skill > div > div {
