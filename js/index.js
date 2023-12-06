@@ -4,12 +4,16 @@ import "@fortawesome/fontawesome-free/css/brands.css";
 import "@fortawesome/fontawesome-free/css/solid.css";
 
 //auto top scroller
-const header = document.querySelector("header");
+const topScroller = document.getElementById("go_top");
+
+topScroller.addEventListener("click", () => {
+    window.scrollTo(0,0);
+});
 
 // hamburger menu
 const hamburgerBtn = document.getElementById("hamburger_btn");
 const menu = document.getElementById("website_menu");
-const HAMBURGER_WIDTH_THRESHOLD = 700; 
+// const HAMBURGER_WIDTH_THRESHOLD = 700; 
 
 hamburgerBtn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
@@ -55,4 +59,74 @@ function UpdateActiveProject() {
 
     activeProject.classList.add("carousel_item_visible");
 }
+
+//skills section
+const SKILLS_SHOW_START = 4;
+const skillContainers = [...document.getElementsByClassName("skill")];
+let visible = 0;
+const moreBtn = document.getElementById("more_skill");
+const icon = moreBtn.querySelector("i");
+
+let reachedBtm = false;
+
+moreBtn.addEventListener("click", () => {
+
+    let currentVisible = visible;
+    if(reachedBtm) 
+    {
+        for(let i = currentVisible - 1; i > (currentVisible - 1) - SKILLS_SHOW_START; i-- ){
+            skillContainers[i].classList.add("hidden");
+            visible--;
+            
+            if(visible === SKILLS_SHOW_START) break;
+        }    
+
+        //toggle to show
+        if(visible === SKILLS_SHOW_START) {
+            icon.className = "fa-solid fa-angle-down fa-3x";
+            reachedBtm = false;
+        } 
+    }
+    else {
+        for(let i = currentVisible; i < currentVisible + SKILLS_SHOW_START; i++ ){
+            skillContainers[i].classList.remove("hidden");
+            visible++;
+
+            if(visible === skillContainers.length) break;
+        }
+        //toggle to hide
+        if(visible === skillContainers.length) {
+            icon.className = "fa-solid fa-angle-up fa-3x";
+            reachedBtm = true;
+        } 
+    }
+
+});
+
+//skill growth animation
+const timeout = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+} 
+
+skillContainers.forEach((skill) => {
+    skill.classList.add("hidden");
+    const growSkillBar = async () => {
+        const skillBar = skill.querySelector("div>div");
+        let width = 0;
+        while(width < skillBar.dataset.val * 2)
+        {
+            skillBar.style.width = `${width}px`;
+            await timeout(50);
+            width+= 2;
+        }
+    }
+
+    growSkillBar();
+});
+
+for(let i = 0; i < SKILLS_SHOW_START; i++) {
+    skillContainers[i].classList.remove("hidden");
+    visible++;
+}
+
 
