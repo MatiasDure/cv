@@ -116,7 +116,7 @@ skillContainers.forEach((skill) => {
         while(width < skillBar.dataset.val * 2)
         {
             skillBar.style.width = `${width}px`;
-            await timeout(50);
+            await timeout(20);
             width+= 2;
         }
     }

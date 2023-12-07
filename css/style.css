@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* global variables */
 :root {
     --turquoise-color: rgb(0, 214, 197);
     --turquoise-mid-transparent: rgba(0, 214, 197,0.4);
@@ -244,7 +245,6 @@ aside button i:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* height: 40px; */
     display: flex;
     justify-content: space-between;
 }
@@ -265,6 +265,44 @@ aside button i:hover {
     transition: all 1s;
     height: 100%;
     width: 100%;
+    position: relative;
+}
+
+.project_info {
+    display: none;
+    background-color: rgba(0,0,0,0.7) ;
+    padding: 10px 20px;
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+.project_info > div:not(div:first-of-type) {
+    margin-top: 10px;
+}
+
+.info_container ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info_container ul li::before {
+    content: "- ";
+}
+
+.info_container h3 {
+    color: var(--turquoise-color)
+}
+
+.inline-info {
+    display: flex;
+    gap: 5px;
+}
+
+.carousel_item:hover .project_info {
+    display: block;
+    color: white;
 }
 
 .carousel_item_visible {
