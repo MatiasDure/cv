@@ -19,46 +19,54 @@ hamburgerBtn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
 });
 
-//carousel
-const projects = [...document.getElementsByClassName("carousel_item")];
-let activeProjectIndex = 0;
-let activeProject = projects[activeProjectIndex];
+//carousel projects
 
-const previousProjectBtn = document.getElementById("carousel_button_prev");
-const nextProjectBtn = document.getElementById("carousel_button_next");
+const ProjectCarousel = (projectElementsClass, previousBtnId, nextBtnId) => {
+    const projects = [...document.getElementsByClassName(projectElementsClass)];
+    let activeProjectIndex = 0;
+    let activeProject = projects.length ? projects[activeProjectIndex] : null;
 
-previousProjectBtn.addEventListener("click", () => {
-    if(activeProjectIndex === 0) return;
+    //buttons
+    const previousBtn = document.getElementById(previousBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
 
-    nextProjectBtn.classList.remove("disabled");
+    const UpdateActiveProject = () => {
+        activeProject.classList.remove("carousel_item_visible");
 
-    activeProjectIndex--;
-
-    if(activeProjectIndex === 0) previousProjectBtn.classList.add("disabled");
+        activeProject = projects[activeProjectIndex];
     
-    UpdateActiveProject();
-});
+        activeProject.classList.add("carousel_item_visible");
+    };
 
-nextProjectBtn.addEventListener("click", () => {
-    if(activeProjectIndex === projects.length - 1) return; 
+    previousBtn.addEventListener("click", () => {
+        if(activeProjectIndex === 0) return;
 
-    previousProjectBtn.classList.remove("disabled");
-
-    activeProjectIndex++;
-
-    if(activeProjectIndex === projects.length - 1) nextProjectBtn.classList.add("disabled");
+        nextBtn.classList.remove("disabled");
     
-    UpdateActiveProject();
-});
+        activeProjectIndex--;
+    
+        if(activeProjectIndex === 0) previousBtn.classList.add("disabled");
+        
+        UpdateActiveProject();
+    });
 
-function UpdateActiveProject() {
-    activeProject.classList.remove("carousel_item_visible");
+    nextBtn.addEventListener("click", () => {
+        if(activeProjectIndex === projects.length - 1) return; 
 
-    //change active project
-    activeProject = projects[activeProjectIndex];
+        previousBtn.classList.remove("disabled");
+    
+        activeProjectIndex++;
+    
+        if(activeProjectIndex === projects.length - 1) nextBtn.classList.add("disabled");
 
-    activeProject.classList.add("carousel_item_visible");
+        UpdateActiveProject();
+    });
+
+    return { projects, activeProject, activeProjectIndex }
 }
+
+const gameProjects = ProjectCarousel("game_carousel_item", "game_carousel_button_prev", "game_carousel_button_next");
+const webProjects = ProjectCarousel("web_carousel_item", "web_carousel_button_prev", "web_carousel_button_next");
 
 //skills section
 const SKILLS_SHOW_START = 4;
