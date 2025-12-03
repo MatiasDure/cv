@@ -1,11 +1,12 @@
 import Hero from './components/hero.tsx'
-import './App.css'
+import ProjectsSection from './components/projects-section.tsx'
 
 function App() {
 
   return (
     <>
       <Hero />
+      <ProjectsSection />
     </>
   )
 }
