@@ -10,16 +10,18 @@ interface ProjectCardProps {
 }
 
 function ProjectCard(props: ProjectCardProps) {
-    return <a href={props.link}>
-        <Card className="hover:shadow-lg transition-shadow h-full">
+    return <a href={props.link} className="group">
+        <Card className="h-full transition-all hover:shadow-xl hover:shadow-accent/20 bg-card/80 backdrop-blur-sm border-0">
             <CardHeader>
-                <CardTitle>{props.title}</CardTitle>
-                <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground"/>
-                <CardDescription>{props.description}</CardDescription>
+                <div className="flex justify-between items-center">
+                    <CardTitle className="text-xl group-hover:text-accent transition-colors">{props.title}</CardTitle>
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"/>
+                </div>
+                <CardDescription className="text-base">{props.description}</CardDescription>
             </CardHeader>
             <CardContent>
                 {props.tags.map((tag) => (
-                    <Badge variant="secondary" key={tag} className="mr-2 mb-2">{tag}</Badge>
+                    <Badge variant="secondary" key={tag} className="mr-2 mb-2 font-robotoMono">{tag}</Badge>
                 ))}
             </CardContent>
         </Card>
